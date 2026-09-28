@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Il Rito della Soglia — Prototipo 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400&family=Cormorant+Unicase:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;background:#070504;color:#d6b06a}
+body{min-height:100svh;display:grid;place-items:center;overflow-x:hidden}
+.rito{position:relative;width:min(100vw,56.25svh);height:min(100svh,177.7778vw);overflow:hidden;background:#090605 url('sfondo.jpg') center/100% 100% no-repeat;isolation:isolate;container-type:inline-size}
+.rito:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(to bottom,transparent 0%,rgba(0,0,0,.14) 26%,rgba(0,0,0,.34) 45%,rgba(0,0,0,.22) 65%,transparent 78%);pointer-events:none}
+.content{position:absolute;z-index:1;left:10%;right:10%;top:26.5%;text-align:center;text-shadow:0 2px 5px #000,0 0 12px #000}
+h1{font-family:'Cinzel Decorative',Georgia,serif;font-size:clamp(25px,6.7cqw,40px);font-weight:400;line-height:1.07;margin:0 0 5.5%;letter-spacing:-.025em;opacity:0;animation:reveal 1.5s ease .3s forwards}
+.copy{font-family:'Cormorant Unicase',Georgia,serif;font-size:clamp(16px,3.5cqw,21px);font-weight:500;line-height:1.15;letter-spacing:.005em}
+.copy p{margin:0 0 4.4%;opacity:0;transform:translateY(7px)}
+.copy p:last-child{margin-bottom:0}
+.copy p:nth-child(1){animation:reveal 1.25s ease 1.5s forwards}
+.copy p:nth-child(2){animation:reveal 1.25s ease 2.4s forwards}
+.copy p:nth-child(3){animation:reveal 1.25s ease 3.3s forwards}
+.copy p:nth-child(4){animation:reveal 1.25s ease 4.2s forwards}
+.open{position:absolute;z-index:2;left:50%;bottom:16%;transform:translateX(-50%);width:58%;padding:12px 8px;border:1px solid rgba(214,176,106,.8);border-radius:999px;background:rgba(14,8,5,.82);color:#e8c780;font:400 clamp(12px,3.15cqw,18px) 'Cinzel Decorative',Georgia,serif;white-space:nowrap;letter-spacing:.015em;text-shadow:0 1px 4px #000;box-shadow:0 0 18px rgba(214,176,106,.20),inset 0 0 12px rgba(214,176,106,.09);opacity:0;animation:buttonIn 1.5s ease 6s forwards;cursor:pointer}
+.open:focus-visible{outline:2px solid #f1d79d;outline-offset:4px}
+.open:active{transform:translateX(-50%) scale(.98)}
+.note{position:absolute;z-index:3;left:9%;right:9%;bottom:7%;padding:9px 12px;border:1px solid rgba(214,176,106,.35);border-radius:10px;background:rgba(8,5,4,.93);color:#e4c98f;font:500 clamp(14px,3.6cqw,18px) 'Cormorant Unicase',Georgia,serif;text-align:center;opacity:0;pointer-events:none;transition:opacity .45s ease}.note.show{opacity:1}
+@keyframes reveal{to{opacity:1;transform:translateY(0)}}
+@keyframes buttonIn{0%{opacity:0;transform:translate(-50%,8px)}100%{opacity:1;transform:translate(-50%,0)}}
+@media(prefers-reduced-motion:reduce){h1,.copy p,.open{animation:none;opacity:1;transform:none}.open{transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+<main class="rito" aria-label="Il Rito della Soglia">
+  <section class="content">
+    <h1>IL RITO DELLA<br>SOGLIA</h1>
+    <div class="copy">
+      <p>Il Registro delle<br>Convocazioni si è aperto</p>
+      <p>Il tuo nome attende<br>di essere riconosciuto</p>
+      <p>Tre prove custodiscono<br>il passaggio</p>
+      <p>Solo chi saprà attraversarle<br>scoprirà ciò che il Registro cela</p>
+    </div>
+  </section>
+  <button class="open" id="open" type="button">Apri il Registro</button>
+  <div class="note" id="note" role="status" aria-live="polite">Il Registro si aprirà nella prossima schermata del prototipo.</div>
+</main>
+<script>
+document.getElementById('open').addEventListener('click',()=>{
+  window.location.href='pagina2/index.html';
+});
+</script>
+</body>
+</html>

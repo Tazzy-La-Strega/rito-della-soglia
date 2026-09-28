@@ -1,0 +1,19 @@
+PAGINA 3 — LE TRE SOGLIE
+
+Apri index.html in Safari.
+
+Sequenza:
+1. Titolo
+2. Prima frase
+3. Seconda frase
+4. Terza frase
+5. I. La Chiave
+6. II. Il Sigillo
+7. III. Il Cerchio
+8. Frase finale
+9. I tre simboli
+10. Pulsante INIZIA LE PROVE
+
+Font coerenti con le pagine precedenti:
+- Cinzel Decorative
+- Cormorant Unicase

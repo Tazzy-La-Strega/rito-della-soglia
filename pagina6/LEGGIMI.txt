@@ -1,0 +1,4 @@
+Pagina 6 — III. IL CERCHIO — prototipo 5.
+Le quattro candele sono state riposizionate usando direttamente come riferimento l'immagine-esempio fornita dall'utente (1024x1536), anziché una griglia teorica.
+Nord: bordo posteriore; Ovest/Est: estremi laterali; Sud/Luna: bordo anteriore prima dello scalino.
+Nessun'altra parte della pagina è stata modificata.

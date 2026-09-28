@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Il Registro delle Convocazioni</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Unicase:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#070606}
+body{display:grid;place-items:center;min-height:100vh;overflow:hidden}
+.page{
+ position:relative;width:min(100vw,66.6667vh);aspect-ratio:2/3;overflow:hidden;
+ background:#090706 url("sfondo-pagina7.png") center/cover no-repeat;color:#d9bd78
+}
+/* Tutto il testo resta sugli scalini inferiori, lasciando intatto il portale. */
+.copy{
+ position:absolute;left:7%;right:7%;bottom:3.2%;height:34%;
+ display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+ text-align:center;text-shadow:0 2px 6px #000,0 0 14px #000;isolation:isolate
+}
+.copy::before{
+ content:"";position:absolute;z-index:-1;left:-6%;right:-6%;top:-10%;bottom:-3%;
+ background:linear-gradient(to bottom,rgba(5,3,3,.18) 0%,rgba(5,3,3,.62) 14%,rgba(5,3,3,.78) 38%,rgba(5,3,3,.82) 70%,rgba(5,3,3,.72) 100%);
+ filter:blur(5px);pointer-events:none
+}
+.stage{width:100%;opacity:0;transform:translateY(8px)}
+.stage1{animation:reveal .8s .45s forwards}
+.stage2{animation:reveal .8s 2.65s forwards;margin-top:3.3%}
+.stage3{animation:reveal .85s 4.8s forwards;margin-top:3.8%}
+h1,h2{font-family:"Cinzel Decorative",serif;color:#d9bd78}
+h1{margin:0 0 .38em;font-size:clamp(14px,3.15vw,21px);line-height:1.05;letter-spacing:.025em}
+p{margin:.12em 0;font:600 clamp(10px,2.35vw,15px)/1.12 "Cormorant Unicase",serif;color:#d9bd78}
+.stage2 p{font-size:clamp(10px,2.45vw,15.5px)}
+h2{margin:0 0 .28em;font-size:clamp(13px,3vw,20px);line-height:1.08;letter-spacing:.025em}
+.reveal-line{font-size:clamp(10px,2.35vw,15px)}
+button{
+ margin-top:3.5%;padding:.58em 1.15em;border:1px solid rgba(217,189,120,.78);
+ background:rgba(20,10,8,.66);color:#d9bd78;border-radius:2px;
+ font:700 clamp(10px,2.35vw,14px)/1 "Cinzel Decorative",serif;letter-spacing:.035em;
+ text-shadow:0 1px 3px #000;box-shadow:0 0 12px rgba(217,189,120,.12);
+ cursor:pointer;-webkit-tap-highlight-color:transparent
+}
+button:active{transform:scale(.98)}
+@keyframes reveal{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0ms!important}}
+</style>
+</head>
+<body>
+<main class="page">
+ <section class="copy">
+  <div class="stage stage1">
+   <h1>IL REGISTRO DELLE CONVOCAZIONI</h1>
+   <p>Il tuo nome è stato riconosciuto.</p>
+   <p>Le tre prove sono state superate.</p>
+   <p>La Soglia è pronta per essere attraversata.</p>
+  </div>
+
+  <div class="stage stage2">
+   <p>Una notte soltanto.</p>
+   <p>Un antico richiamo.</p>
+   <p>Una celebrazione che ritorna ogni anno.</p>
+  </div>
+
+  <div class="stage stage3">
+   <h2>SEI STATO/A CONVOCATO/A</h2>
+   <p class="reveal-line">Per la grande celebrazione della notte più magica dell’anno.</p>
+   <button type="button" id="cross">✦ ATTRAVERSA LA SOGLIA ✦</button>
+  </div>
+ </section>
+</main>
+
+<script>
+document.getElementById("cross").addEventListener("click",()=>{
+  window.location.href="../pagina8/index.html";
+});
+</script>
+</body>
+</html>

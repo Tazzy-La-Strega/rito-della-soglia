@@ -1,0 +1,5 @@
+Pagina 5 — II. IL SIGILLO — prototipo 4
+Rimosso completamente il finto libro/copertina iniziale.
+La scena parte direttamente con il Registro aperto.
+Sequenza: titolo → filastrocca → quattro sigilli, uno alla volta.
+Restano invariati sfondo, font, colore oro, posizione dei sigilli, interazione e messaggi.

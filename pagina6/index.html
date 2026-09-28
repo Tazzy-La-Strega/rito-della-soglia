@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>III. Il Cerchio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Unicase:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#070606}
+body{display:grid;place-items:center;min-height:100vh;overflow:hidden}
+.page{position:relative;width:min(100vw,66.6667vh);aspect-ratio:2/3;overflow:hidden;background:#0b0908 url("sfondo-pagina6.png") center/cover no-repeat;color:#d9bd78}
+.title{position:absolute;top:4.8%;left:8%;right:8%;text-align:center;font:700 clamp(18px,4.5vw,30px)/1.05 "Cinzel Decorative",serif;letter-spacing:.045em;color:#d9bd78;text-shadow:0 2px 5px #000,0 0 12px #000;opacity:0;transform:translateY(7px);animation:reveal .7s .3s forwards}
+.riddle{position:absolute;top:20.2%;left:16%;right:16%;text-align:center;font:600 clamp(11px,2.65vw,17px)/1.20 "Cormorant Unicase",serif;color:#d9bd78;text-shadow:0 2px 4px #000,0 0 9px #000;opacity:0;transform:translateY(7px);animation:reveal .8s 1s forwards}
+
+/* The four candles sit on the visible perimeter of the engraved circle:
+   North, West, East, South. Moon = South. */
+.ritual{position:absolute;inset:0;opacity:0;transform:scale(.96);animation:reveal .8s 2.1s forwards}
+.candle{position:absolute;width:14%;height:13%;border:0;background:transparent;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.candle.north{left:42.3%;top:46.0%}
+.candle.west{left:6.8%;top:53.1%}
+.candle.east{left:80.5%;top:53.0%}
+.candle.south{left:42.3%;top:64.1%}
+.candle:focus-visible{outline:2px solid #d9bd78;outline-offset:2px;border-radius:50%}
+.wax{position:absolute;left:40%;bottom:11%;width:20%;height:39%;border-radius:4px 4px 2px 2px;background:linear-gradient(90deg,#a8753f,#ead5a3 45%,#986031);box-shadow:0 2px 5px rgba(0,0,0,.55)}
+.wick{position:absolute;left:49%;bottom:50%;width:2%;height:8%;background:#21130e}
+.flame{position:absolute;left:38%;bottom:56%;width:24%;height:28%;border-radius:55% 45% 55% 45%;transform:rotate(45deg);background:radial-gradient(circle at 68% 70%,#fff4c4 0 16%,#e5ad45 32%,#b45a21 63%,transparent 67%);filter:drop-shadow(0 0 5px #d58b32) drop-shadow(0 0 10px #b35a1e);transform-origin:50% 85%;animation:flicker 1.25s ease-in-out infinite alternate}
+.candle.out .flame{opacity:0;animation:none}
+.candle.relight .flame{animation:relight .9s ease}
+.symbol{position:absolute;left:24%;right:24%;bottom:-13%;height:27%;display:grid;place-items:center;filter:drop-shadow(0 2px 3px #000)}
+.symbol svg{width:100%;height:100%;overflow:visible}
+.symbol svg path,.symbol svg circle{fill:none;stroke:#d9bd78;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.feedback,.result{position:absolute;left:7%;right:7%;bottom:3.8%;text-align:center;color:#d9bd78;text-shadow:0 2px 5px #000,0 0 10px #000;opacity:0;pointer-events:none}
+.feedback{font:600 clamp(12px,2.75vw,17px)/1.16 "Cormorant Unicase",serif}
+.feedback.show,.result.show{animation:reveal .65s forwards}
+.result h2{margin:0 0 .28em;font:700 clamp(12px,2.9vw,18px)/1.13 "Cinzel Decorative",serif;letter-spacing:.02em}
+.result p{margin:0;font:600 clamp(11px,2.65vw,16px)/1.14 "Cormorant Unicase",serif}
+@keyframes reveal{to{opacity:1;transform:none}}
+@keyframes flicker{0%{transform:rotate(42deg) scale(.94)}100%{transform:rotate(48deg) scale(1.06)}}
+@keyframes relight{0%{opacity:0;transform:rotate(45deg) scale(.2)}45%{opacity:1;transform:rotate(45deg) scale(1.25)}100%{opacity:1;transform:rotate(45deg) scale(1)}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0ms!important}}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="title">III. IL CERCHIO</div>
+<div class="riddle">
+In quattro fasi danza nel cielo,<br>
+muta il suo volto, ma non il mistero.<br>
+Cresce, cala, torna intera,<br>
+segue un ciclo che si rinnova ogni sera.<br>
+Trova colei che mai resta uguale<br>
+e lascia che splenda nel cerchio rituale.
+</div>
+
+<div class="ritual" aria-label="Cerchio rituale con quattro candele">
+<button class="candle north" type="button" data-kind="leaf" aria-label="Candela della foglia">
+<span class="flame"></span><span class="wick"></span><span class="wax"></span>
+<span class="symbol"><svg viewBox="0 0 64 64"><path d="M50 10C29 11 14 23 14 40c0 8 6 14 14 14 17 0 27-17 22-44Z"/><path d="M17 50C26 39 35 29 47 18"/><path d="M28 37c4 0 8 1 12 3"/></svg></span>
+</button>
+<button class="candle west" type="button" data-kind="spiral" aria-label="Candela della spirale">
+<span class="flame"></span><span class="wick"></span><span class="wax"></span>
+<span class="symbol"><svg viewBox="0 0 64 64"><path d="M32 32c0-7 10-8 12-2 3 9-7 18-17 15-14-4-15-23-3-31 16-11 36 2 34 21-2 23-28 34-46 20"/></svg></span>
+</button>
+<button class="candle east" type="button" data-kind="sun" aria-label="Candela del sole">
+<span class="flame"></span><span class="wick"></span><span class="wax"></span>
+<span class="symbol"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="11"/><path d="M32 5v10M32 49v10M5 32h10M49 32h10M13 13l7 7M44 44l7 7M51 13l-7 7M20 44l-7 7"/></svg></span>
+</button>
+<button class="candle south" type="button" data-kind="moon" aria-label="Candela della luna">
+<span class="flame"></span><span class="wick"></span><span class="wax"></span>
+<span class="symbol"><svg viewBox="0 0 64 64"><path d="M45 8C28 12 19 26 23 40c3 11 13 17 25 15-8 7-20 9-30 3C4 50 1 31 10 18 18 6 33 2 45 8Z"/></svg></span>
+</button>
+</div>
+
+<div class="feedback" aria-live="polite"></div>
+<div class="result" aria-live="polite">
+<h2>LA LUNA HA RICONOSCIUTO IL TUO PASSAGGIO</h2>
+<p>Le tre prove sono compiute. Il Registro può finalmente rivelare ciò che custodisce.</p>
+</div>
+</main>
+<script>
+const candles=[...document.querySelectorAll(".candle")],feedback=document.querySelector(".feedback"),result=document.querySelector(".result");
+let solved=false;
+const countOut=()=>candles.filter(c=>c.dataset.kind!=="moon"&&c.classList.contains("out")).length;
+candles.forEach(c=>c.addEventListener("click",()=>{
+ if(solved)return;
+ if(c.dataset.kind==="moon"){
+  c.classList.add("out");
+  feedback.innerHTML="<strong>SUGGERIMENTO:</strong><br>Tre fiamme dovranno cessare di ardere,<br>una soltanto continuerà a splendere.<br>Lascia che splenda nel buio profondo,<br>solo la fiamma di Luna che incanta il mondo.";
+  feedback.classList.remove("show");void feedback.offsetWidth;feedback.classList.add("show");
+  setTimeout(()=>{c.classList.remove("out");c.classList.add("relight");setTimeout(()=>c.classList.remove("relight"),950)},260);
+  return;
+ }
+ c.classList.toggle("out");feedback.classList.remove("show");
+ if(countOut()===3){solved=true;candles.forEach(x=>x.disabled=true);result.classList.add("show");setTimeout(()=>{window.location.href="../pagina7/index.html"},4000)}
+}));
+</script>
+</body>
+</html>

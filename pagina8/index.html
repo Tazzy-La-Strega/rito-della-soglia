@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Halloween Party</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Unicase:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#050404}
+body{display:grid;place-items:center;min-height:100vh;overflow:hidden}
+.page{
+ position:relative;width:min(100vw,66.6667vh);aspect-ratio:2/3;
+ overflow:hidden;background:#050404;color:#d9bd78
+}
+.poster{
+ position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ opacity:0;transform:scale(1.025);
+ animation:posterReveal 1.6s .25s ease forwards
+}
+.final{
+ position:absolute;left:5%;right:5%;bottom:2.1%;
+ padding:3.2% 4% 2.8%;
+ text-align:center;
+ background:linear-gradient(to bottom,rgba(5,3,3,0),rgba(5,3,3,.82) 27%,rgba(5,3,3,.94));
+ opacity:0;transform:translateY(8px);
+ animation:finalReveal .9s 3.2s ease forwards;
+ text-shadow:0 2px 5px #000,0 0 10px #000
+}
+.final p{
+ margin:.12em 0;
+ font:600 clamp(9px,2.05vw,13px)/1.14 "Cormorant Unicase",serif;
+ color:#d9bd78
+}
+.final button{
+ margin-top:2.2%;padding:.58em 1.05em;
+ border:1px solid rgba(217,189,120,.82);
+ background:rgba(15,8,7,.82);color:#d9bd78;
+ font:700 clamp(9px,2.1vw,13px)/1 "Cinzel Decorative",serif;
+ letter-spacing:.025em;cursor:pointer
+}
+@keyframes posterReveal{to{opacity:1;transform:scale(1)}}
+@keyframes finalReveal{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-delay:0ms!important}}
+</style>
+</head>
+<body>
+<main class="page">
+ <img class="poster" src="invito-halloween.png" alt="Invito Halloween Party">
+ <section class="final">
+   <p>La convocazione è stata ricevuta. La Soglia è stata attraversata.</p>
+   <p>Ora non resta che attendere la notte.</p>
+   <button id="whatsapp" type="button">✦ CONFERMA LA TUA PRESENZA ✦</button>
+ </section>
+</main>
+<script>
+document.getElementById("whatsapp").addEventListener("click",()=>{
+ const msg="🕯️ Ho attraversato la Soglia. La convocazione è stata ricevuta. Confermo la mia presenza. 🌙";
+ window.open("https://wa.me/?text="+encodeURIComponent(msg),"_blank");
+});
+</script>
+</body>
+</html>

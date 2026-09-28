@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Il Registro ti attende</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Unicase:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#090706}
+body{display:grid;place-items:center;font-family:"Cormorant Unicase",serif}
+.page{
+  position:relative;width:min(100vw,66.6667vh);aspect-ratio:2/3;overflow:hidden;
+  background:url("sfondo-pagina2.png") center/cover no-repeat;color:#ead7a0;
+}
+.veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(5,4,4,.12) 0%,rgba(5,4,4,.35) 18%,rgba(5,4,4,.18) 37%,rgba(5,4,4,.08) 100%);
+  pointer-events:none;
+}
+.panel{
+  position:absolute;z-index:2;top:8%;left:11%;right:11%;
+  text-align:center;text-shadow:0 2px 8px #000,0 0 16px rgba(0,0,0,.9);
+}
+h1{
+  margin:0 0 .8rem;font-family:"Cinzel Decorative",serif;
+  font-size:clamp(21px,5.1cqw,34px);line-height:1.06;letter-spacing:.045em;
+  color:#d8b66d;
+}
+.intro{
+  margin:0 auto .65rem;max-width:88%;
+  font-size:clamp(14px,3.15cqw,20px);line-height:1.18;font-weight:600;
+}
+.form{margin:.75rem auto 0;width:78%}
+input{
+  width:100%;border:1px solid rgba(218,181,105,.78);border-radius:3px;
+  padding:.58rem .7rem;background:rgba(18,11,8,.72);color:#f3dfad;
+  font:600 clamp(14px,3.15cqw,20px)/1 "Cormorant Unicase",serif;text-align:center;
+  outline:none;box-shadow:inset 0 0 18px rgba(0,0,0,.5),0 0 12px rgba(190,135,58,.15);
+}
+input::placeholder{color:rgba(238,215,164,.65)}
+input:focus{border-color:#e3c47e;box-shadow:0 0 18px rgba(213,166,81,.28)}
+button{
+  margin-top:.65rem;min-width:58%;padding:.65rem 1rem;
+  border:1px solid #c99e54;border-radius:3px;background:rgba(32,13,9,.84);
+  color:#e1c47e;font:700 clamp(13px,3.05cqw,18px)/1.1 "Cinzel Decorative",serif;
+  letter-spacing:.055em;cursor:pointer;box-shadow:0 0 14px rgba(0,0,0,.65);
+}
+button:active{transform:translateY(1px)}
+.result{
+  min-height:3.2em;margin:1rem auto 0;max-width:88%;opacity:0;transform:translateY(6px);
+  transition:.8s ease;font-size:clamp(17px,3.8cqw,24px);line-height:1.15;font-weight:600;
+}
+.result.show{opacity:1;transform:none}
+.name{color:#f0cf7f}
+.continue{
+  opacity:0;pointer-events:none;transition:.8s ease;margin-top:.7rem;
+}
+.continue.show{opacity:1;pointer-events:auto}
+
+.reveal-step{opacity:0;transform:translateY(7px);animation:ritualFade .9s ease forwards}
+.step-title{animation-delay:.35s}
+.step-one{animation-delay:1.9s}
+.step-two{animation-delay:3.4s}
+.step-form{animation-delay:4.9s}
+@keyframes ritualFade{to{opacity:1;transform:translateY(0)}}
+
+@media(max-height:650px){.panel{top:6.5%}.intro{margin-bottom:.6rem}.form{margin-top:.7rem}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="veil"></div>
+  <section class="panel">
+    <h1 class="reveal-step step-title">IL REGISTRO TI ATTENDE</h1>
+    <p class="intro reveal-step step-one">Ogni convocazione comincia con un nome</p>
+    <p class="intro reveal-step step-two">Rivela il tuo e lascia che il Registro ti riconosca</p>
+
+    <div class="form reveal-step step-form">
+      <input id="nome" type="text" maxlength="28" autocomplete="name" placeholder="Scrivi il tuo nome…" aria-label="Scrivi il tuo nome">
+      <button id="rivela" type="button">✦ RIVELA ✦</button>
+    </div>
+
+    <div id="result" class="result" aria-live="polite"></div>
+    <button id="continua" class="continue" type="button">PROSEGUI</button>
+  </section>
+</main>
+
+<script>
+const input=document.getElementById('nome');
+const reveal=document.getElementById('rivela');
+const result=document.getElementById('result');
+const next=document.getElementById('continua');
+
+function revealName(){
+  const nome=input.value.trim();
+  if(!nome){
+    result.innerHTML='Il Registro attende un nome';
+    result.classList.add('show');
+    next.classList.remove('show');
+    input.focus();
+    return;
+  }
+  localStorage.setItem('ritoNome',nome);
+  result.innerHTML='<span class="name">'+escapeHtml(nome)+'</span>, il nome è stato riconosciuto<br>La convocazione può avere inizio';
+  result.classList.add('show');
+  next.classList.add('show');
+}
+function escapeHtml(s){
+  const d=document.createElement('div'); d.textContent=s; return d.innerHTML;
+}
+reveal.addEventListener('click',revealName);
+input.addEventListener('keydown',e=>{if(e.key==='Enter')revealName()});
+next.addEventListener('click',()=>{ window.location.href='../pagina3/index.html'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+PAGINA 4 — I. LA CHIAVE
+
+Apri index.html in Safari.
+
+Font:
+- Cinzel Decorative: titolo e pulsanti
+- Cormorant Unicase: enigma, domanda, campo risposta, indizio e testi narrativi
+
+Funzionamento:
+- Gli elementi appaiono in sequenza.
+- La risposta corretta è OMBRA.
+- Dopo 2 risposte errate compare l'indizio.
+- Con la risposta corretta compare il messaggio di superamento e PROSEGUI.

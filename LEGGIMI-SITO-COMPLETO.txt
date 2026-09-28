@@ -1,0 +1,9 @@
+IL RITO DELLA SOGLIA — SITO COMPLETO
+
+Apri index.html per iniziare il percorso.
+Le 8 pagine definitive sono collegate in sequenza.
+Pagina 5 passa automaticamente alla Pagina 6 dopo il successo (3,5 s).
+Pagina 6 passa automaticamente alla Pagina 7 dopo il successo (4 s).
+La Pagina 8 mantiene il pulsante WhatsApp finale.
+
+Per la pubblicazione online, carica l’intera cartella mantenendo invariata la struttura.

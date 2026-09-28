@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Le Tre Soglie</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Unicase:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#080707}
+body{display:grid;place-items:center;font-family:"Cormorant Unicase",serif}
+.page{
+  position:relative;width:min(100vw,66.6667vh);aspect-ratio:2/3;overflow:hidden;
+  background:url("sfondo-pagina3.png") center/cover no-repeat;color:#ead7a0;
+}
+.veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(5,4,4,.14),rgba(5,4,4,.30) 48%,rgba(5,4,4,.08));
+  pointer-events:none;
+}
+.panel{
+  position:absolute;z-index:2;inset:0;text-align:center;
+  text-shadow:0 2px 8px #000,0 0 16px rgba(0,0,0,.9);
+}
+h1{
+  margin:0 0 .7rem;font-family:"Cinzel Decorative",serif;
+  font-size:clamp(21px,5.1cqw,34px);line-height:1.06;letter-spacing:.045em;color:#d8b66d;
+}
+.copy{
+  margin:.48rem auto;max-width:88%;
+  font-size:clamp(13px,3.05cqw,19px);line-height:1.15;font-weight:600;
+}
+.trials{margin:.65rem auto .5rem}
+.trial{
+  margin:.25rem 0;font-family:"Cinzel Decorative",serif;
+  font-size:clamp(13px,3.05cqw,19px);letter-spacing:.035em;color:#dfc17b;
+}
+.symbols{
+  display:flex;justify-content:center;align-items:center;gap:1.1rem;
+  margin:.7rem auto .15rem;
+}
+.symbol{
+  width:42px;height:42px;display:grid;place-items:center;
+  border:1px solid rgba(217,180,104,.7);border-radius:50%;
+  background:rgba(20,12,10,.62);box-shadow:0 0 13px rgba(0,0,0,.65);
+  color:#e0c27e;
+}
+.symbol svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+button{
+  margin-top:.75rem;padding:.62rem 1rem;min-width:61%;
+  border:1px solid #c99e54;border-radius:3px;background:rgba(32,13,9,.84);
+  color:#e1c47e;font:700 clamp(12px,2.85cqw,17px)/1.1 "Cinzel Decorative",serif;
+  letter-spacing:.045em;cursor:pointer;box-shadow:0 0 14px rgba(0,0,0,.65);
+}
+.reveal{opacity:0;transform:translateY(7px);animation:ritualFade .82s ease forwards}
+.s1{animation-delay:.35s}.s2{animation-delay:1.55s}.s3{animation-delay:2.75s}
+.s4{animation-delay:3.95s}.s5{animation-delay:5.0s}.s6{animation-delay:6.0s}
+.s7{animation-delay:7.0s}.s8{animation-delay:8.15s}
+.s9{animation-delay:9.45s}.s10{animation-delay:10.8s}
+@keyframes ritualFade{to{opacity:1;transform:translateY(0)}}
+
+/* PROVA 2: cambia soltanto la distribuzione verticale */
+.panel h1{position:absolute;top:7.5%;left:9%;right:9%}
+.panel > .copy:nth-of-type(1){position:absolute;top:16.8%;left:9%;right:9%}
+.panel > .copy:nth-of-type(2){position:absolute;top:25.0%;left:9%;right:9%}
+.panel > .copy:nth-of-type(3){position:absolute;top:33.2%;left:9%;right:9%}
+.trials{position:absolute;top:40.0%;left:9%;right:9%;margin:0}
+.trial{margin:0 0 1.05rem}
+.panel > .copy:nth-of-type(4){position:absolute;top:56.3%;left:9%;right:9%}
+.symbols{position:absolute;top:63.2%;left:9%;right:9%;margin:0}
+#inizia{
+  position:absolute;top:78.5%;left:0;right:0;
+  width:max-content;max-width:82%;margin:0 auto;white-space:nowrap;
+}
+#inizia:active{transform:translateY(1px)}
+
+.copy{margin:.36rem auto}.trials{margin:.45rem auto}.symbols{margin:.5rem auto .1rem}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="veil"></div>
+  <section class="panel">
+    <h1 class="reveal s1">LE TRE SOGLIE</h1>
+
+    <p class="copy reveal s2">Il Registro ha riconosciuto il tuo nome</p>
+    <p class="copy reveal s3">Ma ciò che custodisce non può ancora essere rivelato</p>
+    <p class="copy reveal s4">Tre prove proteggono il suo segreto</p>
+
+    <div class="trials">
+      <div class="trial reveal s5">I. LA CHIAVE</div>
+      <div class="trial reveal s6">II. IL SIGILLO</div>
+      <div class="trial reveal s7">III. IL CERCHIO</div>
+    </div>
+
+    <p class="copy reveal s8">Attraversale e scoprirai ciò che si cela dietro la convocazione</p>
+
+    <div class="symbols reveal s9" aria-label="I simboli delle tre prove">
+      <!-- Chiave -->
+      <span class="symbol" title="La Chiave">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="10" cy="11" r="5.2"/><path d="M14 15l12 12M20 21l3-3M23 24l3-3"/>
+        </svg>
+      </span>
+      <!-- Sigillo occulto astratto -->
+      <span class="symbol" title="Il Sigillo">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="11"/><path d="M16 6l3.2 7.1 7.8.8-5.9 5.2 1.7 7.6-6.8-4-6.8 4 1.7-7.6L5 13.9l7.8-.8z"/>
+        </svg>
+      </span>
+      <!-- Cerchio -->
+      <span class="symbol" title="Il Cerchio">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="10.5"/><circle cx="16" cy="16" r="5.2"/><path d="M16 3v5M16 24v5M3 16h5M24 16h5"/>
+        </svg>
+      </span>
+    </div>
+
+    <button class="reveal s10" id="inizia" type="button">✦ INIZIA LE PROVE ✦</button>
+  </section>
+</main>
+<script>
+document.getElementById('inizia').addEventListener('click',()=>{
+  window.location.href='../pagina4/index.html';
+});
+</script>
+</body>
+</html>

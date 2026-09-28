@@ -1,0 +1,11 @@
+Pagina 8 — HALLOWEEN PARTY — prototipo finale
+
+Apri index.html in Safari.
+
+- Il poster approvato viene mostrato senza modificarne grafica o testi.
+- Comparsa morbida del poster.
+- Dopo la rivelazione compare la chiusura:
+  “La convocazione è stata ricevuta. La Soglia è stata attraversata.
+   Ora non resta che attendere la notte.”
+- Il pulsante CONFERMA LA TUA PRESENZA apre WhatsApp con il messaggio concordato.
+- Font dell'elemento aggiunto: Cinzel Decorative + Cormorant Unicase.
